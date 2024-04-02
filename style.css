@@ -1,0 +1,324 @@
+
+@import url("//fonts.googleapis.com/css?family=Google+Sans:400,500,600,700");
+@import url("//fonts.googleapis.com/css?family=Roboto+Mono:400,500");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Google Sans", Helvetica, Arial, sans-serif;
+  scroll-behavior: smooth;
+}
+/* WebKit-based browsers (Chrome, Safari) */
+/* Customize the track */
+*::-webkit-scrollbar {
+  width: 2px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track background color */
+}
+
+/* Customize the thumb (the draggable part) */
+*::-webkit-scrollbar-thumb {
+  background: #d8d8ff; /* Thumb color */
+  border-radius: 6px;
+}
+
+body {
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
+header {
+  padding: 10px;
+  border-bottom: 1px solid gainsboro;
+}
+main {
+  width: 90%;
+  height: 80vh;
+  border: 3px dashed #575de8;
+  margin: 15px auto;
+  border-radius: 40px;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 49% 49%;
+}
+main.drag-over {
+  border-radius: 0;
+  background-color: #d8d8ff;
+}
+main section:first-child {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+main section:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+main section h1 {
+  font-family: "Tilt Neon", sans-serif;
+  font-size: clamp(36px, 4vw, 60px);
+}
+main section .light {
+  color: #6f6f6f;
+  font-weight: 450;
+}
+#fileinput {
+  display: none;
+}
+label {
+  margin: 10px 0;
+  border: 2px solid #d0d0d0;
+  padding: 5px 10px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+.description {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  width: 80%;
+  height: 60px;
+}
+.description span {
+  border-left: 3px solid #d0d0d0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.description h5 {
+  background-color: #e8e8e8;
+  border-radius: 25px;
+  padding: 5px 7px;
+}
+.description span:last-child {
+  border-right: 3px solid #d0d0d0;
+}
+.drop img {
+  width: 100px;
+}
+.container {
+  width: 90%;
+  height: 85vh;
+  margin: 15px auto;
+  border-radius: 40px;
+  align-items: center;
+  display: grid;
+  background-color: #eeeefd;
+  grid-template-columns: 49% 49%;
+  padding: 5px;
+}
+.container .part {
+  padding: 20px;
+}
+.container .part.part1 {
+  background-color: white;
+  height: 100%;
+  min-height: 250px;
+  border-radius: 40px;
+  overflow-y: auto;
+  cursor: all-scroll;
+}
+table {
+  width: 100%;
+}
+thead {
+  text-align: left;
+}
+th,
+td {
+  text-align: left;
+}
+.part.part2 {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  flex-direction: column;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+button {
+  padding: 10px;
+  background-color: #575de8;
+  font-weight: bold;
+  color: white;
+  font-size: 17px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 17px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+a {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: orangered;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 4px 0;
+  /* display: inline-block; */
+}
+a:visited {
+  background-color: green;
+}
+.tablePreview {
+  width: 100%;
+  margin: 10px auto;
+  border-radius: 5px;
+  padding: 15px;
+  /* height: 90vh; */
+  overflow-x: auto;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+/* tr:nth-child(even) {
+  background-color: #dddddd;
+} */
+.model {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff20;
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.3s;
+}
+.model.show {
+  transform: scale(1);
+  opacity: 1;
+}
+.model .popup {
+  width: 90%;
+  height: 70%;
+  background-color: #444141;
+  border-radius: 40px;
+  max-width: 600px;
+  color: white;
+  overflow: hidden;
+}
+.model .popup h2 {
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #353535;
+}
+.chatbg {
+  width: 100%;
+  height: 80%;
+  background: url(chat.png) no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chatbg .chat {
+  width: 50%;
+  padding: 10px;
+  background-color: #006c4d;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.red {
+  background-color: orangered;
+  color: white;
+}
+i {
+  cursor: pointer;
+}
+.chatbg .chat::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  border-bottom-right-radius: 50px;
+  background: linear-gradient(
+    135deg,
+    #006c4d 0%,
+    #006c4d 50%,
+    transparent 50%,
+    transparent
+  );
+}
+.duplicate {
+  background-color: #fdfd27; /* You can change the highlighting style */
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  height: 10vh;
+  background-color: #ececec;
+  padding: 10px;
+  color: gray;
+  line-height: 1.2rem;
+}
+@media (width<=950px) {
+  main {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    text-align: center;
+    border: none;
+  }
+  .container {
+    height: 100vh;
+    grid-template-columns: auto;
+  }
+  .description {
+    display: none;
+  }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Send Msg</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <header>
+      <h2>WhatsApp Sender</h2>
+    </header>
+    <main id="uploadContainer">
+      <section>
+        <h1>Send Message To Whatsapp Without Api</h1>
+        <h3 class="light">
+          Firstly Make csv file of your data than upload it to this webiste
+          <wbr />customize your message than click send
+        </h3>
+      </section>
+      <section>
+        <div class="drop">
+          <img src="./images/upload.svg" alt="" />
+        </div>
+        <h3>Drop File here</h3>
+        <input type="file" id="fileinput" accept=".csv" />
+        <label for="fileinput">Choose Files</label>
+        <div class="description">
+          <span>
+            <h4>Only Csv</h4>
+            <h5>File type</h5>
+          </span>
+          <span>
+            <h4>500MB</h4>
+            <h5>Max size</h5>
+          </span>
+          <span>
+            <h4>2 Column</h4>
+            <h5>Name&Number</h5>
+          </span>
+        </div>
+      </section>
+    </main>
+    <section id="viewContainer" class="container">
+      <div id="display" class="part part1"></div>
+
+      <div class="part part2">
+        <div class="inputs">
+          <h2>Message</h2>
+          <input
+            value="New Batch Starting"
+            id="header"
+            type="text"
+            placeholder="Header"
+          />
+          <input
+            id="text"
+            type="text"
+            placeholder="Message"
+            value="आपको सूचित किया जाता है की "
+          />
+          <input
+            value="बैच टाइम -10 pm "
+            id="time"
+            type="text"
+            placeholder="Timming"
+          />
+          <input
+            value="Shikhar Institute"
+            id="footer"
+            type="text"
+            placeholder="Footer"
+          />
+          <div class="buttons">
+            <button onclick="show()">
+              <i class="material-icons">visibility</i>Preview
+            </button>
+            <button onclick="newTab()">Get Table</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="scroll" class="tablePreview"></section>
+    <div class="model">
+      <div class="popup">
+        <h2>
+          Preview
+          <span onclick="closem()"><i class="material-icons">close</i></span>
+        </h2>
+        <div class="chatbg">
+          <div class="chat">
+            <span>New Batch Staring soon..</span>
+            <span>Dear some one </span>
+            <span>Batch-time: 1 pm se 2am</span>
+            <span>Shikhar Institute janjgir</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <h5>&copy;All Rights Reserved 2023</h5>
+      <h5>Website designed & Developed for shikhar institute</h5>
+      <h5>By Ranjan Kashyap</h5>
+    </footer>
+ <script src="script.js"></script>
+  </body>
+</html>
