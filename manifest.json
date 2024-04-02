@@ -3,7 +3,7 @@
     "short_name": "MSG sender",
     "start_url": "/",
     "display": "standalone",
-    "background_color": " #000b83a",
+    "background_color": "#000b83a",
      "theme_color": "#000b83a",
     "description": "whatsapp message sender for shikhar institute",
     "icons": [
