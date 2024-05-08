@@ -157,9 +157,10 @@ function maketable(data) {
     const name = data[i][0];
     const mob = data[i][1].trim();
     let number = removeFirstTwoDigits(mob);
-    const link = `https://wa.me/91${number}?text=${encodeURIComponent(
+    const link66 = `https://wa.me/91${number}?text=${encodeURIComponent(
       message
     )}`;
+    const link = `https://web.whatsapp.com/send?phone=91${number}`
     const link2 = `sms:91${number}?body=${encodeURIComponent(message)}`;
 
     const row = document.createElement("tr");
