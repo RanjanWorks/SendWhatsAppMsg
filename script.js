@@ -160,7 +160,7 @@ function maketable(data) {
     const link66 = `https://wa.me/91${number}?text=${encodeURIComponent(
       message
     )}`;
-    const link = `https://web.whatsapp.com/send?phone=91${number}`
+    const link = `https://web.whatsapp.com/send?phone=91${number}&text=${encodeURIComponent(message)}`
     const link2 = `sms:91${number}?body=${encodeURIComponent(message)}`;
 
     const row = document.createElement("tr");
